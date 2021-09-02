@@ -1,0 +1,12 @@
+﻿
+@{
+}
+<div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+
+<script>
+    let clickEvent = new Event('storage');
+    localStorage.setItem("docSigned", "true");
+    window.dispatchEvent(clickEvent);
+</script>

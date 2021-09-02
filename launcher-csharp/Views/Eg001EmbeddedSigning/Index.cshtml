@@ -1,0 +1,19 @@
+﻿@model DocuSign.CodeExamples.eSignature.Models.LoadPageDocuSign
+<h1>Assinar documento</h1>
+
+<iframe id="frame-docusign" src="@Model.Link" width="100%" height="1024"></iframe>
+
+<div class="alert alert-success" role="alert" id="alert-success">
+    <h4 class="alert-heading">Assinado!</h4>
+</div>
+
+<script>
+    window.addEventListener('storage', function (event) {
+        var docSigned = this.localStorage.getItem('docSigned') == "true";
+        if (docSigned) {
+            $('#frame-docusign').hide();
+            $('#alert-success').show();
+            this.localStorage.removeItem('docSigned');
+        }
+    });
+</script>
